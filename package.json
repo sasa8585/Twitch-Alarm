@@ -2,7 +2,7 @@
   "name": "twitch-alarm",
   "title": "Twitch Alarm",
   "id": "jid1-PmBVeuWLfYr73g",
-  "description": "An alarm that plays a sound notification when specified Twitch streamers go live.",
+  "description": "Звук уведомления о начале стрима.",
   "author": "hunter",
   "license": "MPL 2.0",
   "version": "0.111.0",
@@ -10,56 +10,56 @@
   "icon64": "data/ico64.png",
   "preferences": [{
     "name": "streamer_list",
-    "title": "Streamers to receive alerts from",
-    "description": "List each streamer's channel name, with a comma separating each individual channel",
+    "title": "О каких стримах получать уведомления",
+    "description": "Впишите названия каналов, разделяя запятой",
     "type": "string",
     "value": ""
   },
   {
     "name": "import_user",
-    "title": "User to import followed streams from",
-    "description": "Type in the Twitch username of the user you wish to import followed streams from, then click the import button below",
+    "title": "Загрузить подписки",
+    "description": "Впишите ваш ник на Твиче, чтобы загрузить список всех ваших подписок",
     "type": "string",
     "value": ""
   },
   {
     "type": "control",
-    "label": "Import followed streams",
+    "label": "Загрузить подписки",
     "name": "importClick",
-    "title": "Click to import followed streams from the user specified above"
+    "title": "Нажмите чтобы загрузить"
   },
   {
     "name": "update_interval",
-    "title": "Seconds to wait between updates",
-    "description": "Number of seconds waited between checking for online streams",
+    "title": "Частота проверки",
+    "description": "Время в секундах между проверками",
     "type": "integer",
-    "value": 1
+    "value": 60
   },
   {
    "name": "soundAlarmOff",
-   "title": "Disable sound alarm",
-   "description": "When this option is checked, the only alert will be the flashing badge on the add-on icon",
+   "title": "Отключить звук",
+   "description": "Когда отмечено, будет только мигающая иконка.",
    "type": "bool",
    "value" : false
   },
   {
     "name": "alarm_length",
-    "title": "Length of alarm: indefinite if 0",
-    "description": "The length of the alarm can be limited to a specified number of seconds; when set to 0, it goes off until the user responds to it",
+    "title": ": бесконечно если 0",
+    "description": "Продолжительность звонка в секундах. Если установлен 0, то до нажатия на иконку.",
     "type": "integer",
     "value": 0
   },
   {
     "name": "debounce_interval",
-    "title": "Seconds it takes for a streamer who went offline to be registered as offline",
-    "description": "Low values may result in multiple alarms going off when a stream begins and ends due to Twitch API issues",
+    "title": "Стрим считать оконченным после  ,сек",
+    "description": "Маленькие значения могут привести к ложным срабатываниям, это из-за глюков Twitch API",
     "type": "integer",
     "value": 45
   },
   {
    "name": "uniqueIds",
-   "title": "Do not play alarm on browser startup if you've already received an alarm for that particular stream",
-   "description": "This only applies to individual streams. If the streamer quits streaming and starts again later, you will receive an alarm for that",
+   "title": "Без звука при запуске браузера, если вы уже получали уведомление об этом стриме.",
+   "description": "Если стрим закончился, и позже начался новый - вы получите уведомление.",
    "type": "bool",
    "value" : false
   }]
